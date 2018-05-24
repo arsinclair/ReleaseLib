@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReleaseLib
 {
+    /// <summary>
+    /// Релиз. Может представлять любую выпущенную музыкальную единицу (например, альбом, сингл, микстейп, и т.п.).
+    /// </summary>
     public class Release
     {
         /// <summary>
@@ -52,6 +52,26 @@ namespace ReleaseLib
         /// Лейблы, на которых данный релиз был выпущен.
         /// </summary>
         public List<Label> Labels { get; set; }
+
+        /// <summary>
+        /// Список музыкальных стилей, к которым можно отнести данный релиз.
+        /// </summary>
+        public List<string> Styles { get; set; }
+
+        /// <summary>
+        /// Список музыкальных жанров, к которым можно отнести данный релиз.
+        /// </summary>
+        public List<string> Genres { get; set; }
+
+        /// <summary>
+        /// Список носителей, на которых был выпущен данный релиз (например, 2xCD, 1xLP, и т.п.).
+        /// </summary>
+        public List<Medium> Mediums { get; set; }
+
+        /// <summary>
+        /// Длительность звучания всех треков на всех носителях данного релиза.
+        /// </summary>
+        public TimeSpan Duration { get; set; }
 
         #region Methods
         public Release()
