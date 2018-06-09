@@ -1245,4 +1245,12 @@
     <XXCode>ZW</XXCode>
     <XXXCode>ZWE</XXXCode>
   </Country>
+  <Country>
+    <Title>Worldwide</Title>
+    <XXCode>XW</XXCode>
+  </Country>
+  <Country>
+    <Title>Europe</Title>
+    <XXCode>XE</XXCode>
+  </Country>
 </Countries>

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using ReleaseLib.APIHelpers;
+using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ReleaseLib
 {
@@ -18,15 +21,41 @@ namespace ReleaseLib
         /// </summary>
         public string Barcode { get; set; }
 
+        private string _musicBrainz_ID;
         /// <summary>
         /// GUID релиза в базе данных MusicBrainz.
         /// </summary>
-        public string MusicBrainz_ID { get; set; }
+        public string MusicBrainz_ID
+        {
+            get
+            {
+                return _musicBrainz_ID;
+            }
+            set
+            {
+                _musicBrainz_ID = value;
+                OnMusicbrainzIDSubmitted(_musicBrainz_ID, ParseRelease);
+                resetEvent.WaitOne();
+            }
+        }
 
+        private string _discogs_ID;
         /// <summary>
         /// ID релиза в базе данных Discogs.
         /// </summary>
-        public string Discogs_ID { get; set; }
+        public string Discogs_ID
+        {
+            get
+            {
+                return _discogs_ID;
+            }
+            set
+            {
+                _discogs_ID = value;
+                OnDiscogsIDSubmitted(_discogs_ID);
+                resetEvent.WaitOne();
+            }
+        }
 
         /// <summary>
         /// Год выпуска текущего релиза.
@@ -73,10 +102,41 @@ namespace ReleaseLib
         /// </summary>
         public TimeSpan Duration { get; set; }
 
+        private Settings _settings;
         #region Methods
         public Release()
         {
-            var _settings = new Settings();
+            _settings = new Settings();
+        }
+        #endregion
+
+        ManualResetEvent resetEvent = new ManualResetEvent(false);
+
+        #region Events
+        private async void OnMusicbrainzIDSubmitted(string value, Action<string> parseReleaseCallback)
+        {
+            var data = await MBAPIHelper.GetReleaseById(value, true);
+            parseReleaseCallback(data);
+        }
+
+        private void ParseRelease(string JSON)
+        {
+            dynamic data = JObject.Parse(JSON);
+            this.Title = data.title;
+            if (data.country)
+            {
+                this.Country = _settings.Countries.Find(c => data.country == c.Title || data.country == c.XXCode);
+            }
+
+
+            var _x = data.title as string;
+            var Title = _x;
+            resetEvent.Set();
+        }
+
+        private void OnDiscogsIDSubmitted(string value)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
