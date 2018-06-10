@@ -1,5 +1,4 @@
 ﻿using ReleaseLib.Properties;
-using ReleaseLib.Service;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;

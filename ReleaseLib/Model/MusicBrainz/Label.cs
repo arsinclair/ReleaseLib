@@ -1,4 +1,4 @@
-﻿namespace ReleaseLib
+﻿namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Музыкальный лейбл.

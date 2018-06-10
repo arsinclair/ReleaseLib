@@ -45,20 +45,20 @@
   <ItemGroup>
     <Compile Include="APIHelpers\DiscogsAPIHelper.cs" />
     <Compile Include="APIHelpers\MBAPIHelper.cs" />
-    <Compile Include="Model\Artist.cs" />
+    <Compile Include="Model\MusicBrainz\Artist.cs" />
     <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\Label.cs" />
-    <Compile Include="Model\Medium.cs" />
+    <Compile Include="Model\MusicBrainz\Label.cs" />
+    <Compile Include="Model\MusicBrainz\Medium.cs" />
     <Compile Include="Model\MediumType.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Release.cs" />
+    <Compile Include="Model\MusicBrainz\Release.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Model\Track.cs" />
+    <Compile Include="Model\MusicBrainz\Track.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

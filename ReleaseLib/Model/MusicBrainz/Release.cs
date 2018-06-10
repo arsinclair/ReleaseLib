@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace ReleaseLib
+namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Релиз. Может представлять любую выпущенную музыкальную единицу (например, альбом, сингл, микстейп, и т.п.).
@@ -123,11 +123,7 @@ namespace ReleaseLib
         {
             dynamic data = JObject.Parse(JSON);
             this.Title = data.title;
-            if (data.country)
-            {
-                this.Country = _settings.Countries.Find(c => data.country == c.Title || data.country == c.XXCode);
-            }
-
+            this.Country = _settings.Countries.Find(c => data.country == c.Title || data.country == c.XXCode);
 
             var _x = data.title as string;
             var Title = _x;

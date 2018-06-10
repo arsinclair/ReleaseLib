@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ReleaseLib
+namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Носитель.

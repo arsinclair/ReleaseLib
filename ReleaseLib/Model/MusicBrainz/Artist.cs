@@ -1,4 +1,4 @@
-﻿namespace ReleaseLib
+﻿namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Исполнитель. Может быть человеком, группой, оркестром, и т.п.
