@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using ReleaseLib.APIHelpers;
+using System;
 using System.Collections.Generic;
 
 namespace ReleaseLib.MusicBrainz
@@ -41,7 +44,8 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// Исполнители, с которыми ассоциирован данный релиз.
         /// </summary>
-        public List<Artist> Artists { get; set; }
+        [JsonProperty(PropertyName = "artist-credit")]
+        public List<ArtistCredit> ArtistCredit { get; set; }
 
         /// <summary>
         /// Лейблы, на которых данный релиз был выпущен.
@@ -72,6 +76,33 @@ namespace ReleaseLib.MusicBrainz
         #region Methods
         public Release()
         {
+        }
+
+        public static Release Load(string Id)
+        {
+            return _Load(Id, false);
+        }
+        public static Release Load(string Id, params string[] AdditionalFields)
+        {
+            return _Load(Id, false, AdditionalFields);
+        }
+        public static Release Load(string Id, bool IncludeAllAdditionalFields)
+        {
+            return _Load(Id, true);
+        }
+        private static Release _Load(string Id, bool IncludeAllAdditionalFields, params string[] AdditionalFields)
+        {
+            string json = string.Empty;
+            if (IncludeAllAdditionalFields == true)
+            {
+                json = MBAPIHelper.GetReleaseById(Id, IncludeAllAdditionalFields).Result;
+            }
+            else
+            {
+                json = MBAPIHelper.GetReleaseById(Id, AdditionalFields).Result;
+            }
+            var release = JObject.Parse(json).ToObject<Release>();
+            return release;
         }
         #endregion
     }
