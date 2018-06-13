@@ -1,8 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using ReleaseLib.APIHelpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace ReleaseLib.MusicBrainz
 {

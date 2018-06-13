@@ -6,7 +6,7 @@
         {
             var release = new MusicBrainz.Release
             {
-                MusicBrainz_ID = "c0b0105b-a942-43c4-a2a8-a54f847a200e"
+                Id = "c0b0105b-a942-43c4-a2a8-a54f847a200e"
             };
         }
     }
