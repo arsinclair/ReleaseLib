@@ -11,17 +11,14 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// GUID трека в базе данных MusicBrainz.
         /// </summary>
-        public string MusicBrainz_ID { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Порядковый номер трека в треклисте.
         /// </summary>
         public int Position { get; set; }
 
-        /// <summary>
-        /// Список исполнителей, ассоциированный с треком.
-        /// </summary>
-        public List<Artist> Artists { get; set; }
+        public string Number { get; set; }
 
         /// <summary>
         /// Название трека.
@@ -31,6 +28,8 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// Продолжительность звучания трека.
         /// </summary>
-        public TimeSpan Duration { get; set; }
+        public int Length { get; set; }
+
+        public Recording Recording { get; set; }
     }
 }
