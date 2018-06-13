@@ -45,9 +45,12 @@
   <ItemGroup>
     <Compile Include="APIHelpers\DiscogsAPIHelper.cs" />
     <Compile Include="APIHelpers\MBAPIHelper.cs" />
-    <Compile Include="Model\MusicBrainz\ArtistCredit.cs" />
+    <Compile Include="Model\MusicBrainz\Area.cs" />
+    <Compile Include="Model\MusicBrainz\Helpers\ArtistCredit.cs" />
     <Compile Include="Model\MusicBrainz\Artist.cs" />
     <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\MusicBrainz\Event.cs" />
+    <Compile Include="Model\MusicBrainz\Helpers\LifeSpan.cs" />
     <Compile Include="Model\MusicBrainz\Label.cs" />
     <Compile Include="Model\MusicBrainz\Media.cs" />
     <Compile Include="Model\MediumType.cs" />
@@ -60,7 +63,7 @@
     <Compile Include="Model\MusicBrainz\Release.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Model\MusicBrainz\Track.cs" />
+    <Compile Include="Model\MusicBrainz\Helpers\Track.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

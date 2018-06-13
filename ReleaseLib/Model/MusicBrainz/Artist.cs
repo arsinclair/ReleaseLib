@@ -12,6 +12,12 @@ namespace ReleaseLib.MusicBrainz
         /// </summary>
         public string Id { get; set; }
         public string Name { get; set; }
+        public Area Area { get; set; }
+
+        public string Type { get; set; }
+
+        [JsonProperty(PropertyName = "type-id")]
+        public string TypeId { get; set; }
 
         [JsonProperty(PropertyName = "sort-name")]
         public string SortName { get; set; }
