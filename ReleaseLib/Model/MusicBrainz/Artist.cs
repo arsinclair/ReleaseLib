@@ -1,4 +1,6 @@
-﻿namespace ReleaseLib.MusicBrainz
+﻿using Newtonsoft.Json;
+
+namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Исполнитель. Может быть человеком, группой, оркестром, и т.п.
@@ -8,6 +10,12 @@
         /// <summary>
         /// GUID исполнителя в базе данных MusicBrainz.
         /// </summary>
-        public string MusicBrainz_ID { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "sort-name")]
+        public string SortName { get; set; }
+
+        public string Disambiguation { get; set; }
     }
 }

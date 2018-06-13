@@ -21,46 +21,15 @@ namespace ReleaseLib.MusicBrainz
         /// </summary>
         public string Barcode { get; set; }
 
-        private string _musicBrainz_ID;
         /// <summary>
         /// GUID релиза в базе данных MusicBrainz.
         /// </summary>
-        public string MusicBrainz_ID
-        {
-            get
-            {
-                return _musicBrainz_ID;
-            }
-            set
-            {
-                _musicBrainz_ID = value;
-                OnMusicbrainzIDSubmitted(_musicBrainz_ID, ParseRelease);
-                resetEvent.WaitOne();
-            }
-        }
-
-        private string _discogs_ID;
-        /// <summary>
-        /// ID релиза в базе данных Discogs.
-        /// </summary>
-        public string Discogs_ID
-        {
-            get
-            {
-                return _discogs_ID;
-            }
-            set
-            {
-                _discogs_ID = value;
-                OnDiscogsIDSubmitted(_discogs_ID);
-                resetEvent.WaitOne();
-            }
-        }
+        public string Id { get; set; }
 
         /// <summary>
         /// Год выпуска текущего релиза.
         /// </summary>
-        public DateTime Year { get; set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// Год выпуска оригинального релиза. Актуален в релизах типа Reissue.
@@ -70,7 +39,7 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// Страна выпуска релиза. Для цифровых релизов - Worldwide.
         /// </summary>
-        public Country Country { get; set; }
+        public string Country { get; set; }
 
         /// <summary>
         /// Исполнители, с которыми ассоциирован данный релиз.
@@ -95,7 +64,7 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// Список носителей, на которых был выпущен данный релиз (например, 2xCD, 1xLP, и т.п.).
         /// </summary>
-        public List<Medium> Mediums { get; set; }
+        public List<Media> Media { get; set; }
 
         /// <summary>
         /// Длительность звучания всех треков на всех носителях данного релиза.
@@ -106,33 +75,6 @@ namespace ReleaseLib.MusicBrainz
         #region Methods
         public Release()
         {
-            _settings = new Settings();
-        }
-        #endregion
-
-        ManualResetEvent resetEvent = new ManualResetEvent(false);
-
-        #region Events
-        private async void OnMusicbrainzIDSubmitted(string value, Action<string> parseReleaseCallback)
-        {
-            var data = await MBAPIHelper.GetReleaseById(value, true);
-            parseReleaseCallback(data);
-        }
-
-        private void ParseRelease(string JSON)
-        {
-            dynamic data = JObject.Parse(JSON);
-            this.Title = data.title;
-            this.Country = _settings.Countries.Find(c => data.country == c.Title || data.country == c.XXCode);
-
-            var _x = data.title as string;
-            var Title = _x;
-            resetEvent.Set();
-        }
-
-        private void OnDiscogsIDSubmitted(string value)
-        {
-            throw new NotImplementedException();
         }
         #endregion
     }

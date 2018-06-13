@@ -6,7 +6,7 @@ namespace ReleaseLib.MusicBrainz
     /// <summary>
     /// Носитель.
     /// </summary>
-    public class Medium
+    public class Media
     {
         /// <summary>
         /// Набор треков, ассоциированный с носителем.
