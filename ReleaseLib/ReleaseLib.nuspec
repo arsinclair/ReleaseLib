@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>ReleaseLib</id>
+    <version>1.0.0</version>
+    <authors>roman412</authors>
+    <owners>roman412</owners>
+    <licenseUrl>https://gitlab.com/roman412/ReleaseLib/raw/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library designed for collecting and organising information about any musical release available in open databases like MusicBrainz and Discogs.</description>
+    <tags>musicbrainz api library release music album discogs</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="11.0.2"  />
+    </dependencies>
+    <summary>ReleaseLib is an musical entities classes library such as concert, place, recording, etc.</summary>
+  </metadata>
+  <files>
+    <file src="bin\Release\ReleaseLib.dll" target="lib" />
+    <file src="bin\Release\ReleaseLib.pdb" target="lib" />
+  </files>
+</package>

@@ -2,11 +2,11 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("ReleaseLib")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("ReleaseLib is a library designed for collecting and organising information about any musical release available in open databases like MusicBrainz and Discogs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("roman412")]
 [assembly: AssemblyProduct("ReleaseLib")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright © roman412 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
