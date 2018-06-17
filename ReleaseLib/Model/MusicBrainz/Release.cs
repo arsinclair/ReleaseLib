@@ -52,7 +52,8 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// Лейблы, на которых данный релиз был выпущен.
         /// </summary>
-        public List<Label> Labels { get; set; }
+        [JsonProperty(PropertyName = "label-info")]
+        public List<LabelInfo> LabelInfo { get; set; }
 
         /// <summary>
         /// Список музыкальных стилей, к которым можно отнести данный релиз.
