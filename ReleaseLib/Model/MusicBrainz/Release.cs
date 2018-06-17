@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ReleaseLib.APIHelpers;
+using ReleaseLib.Model.MusicBrainz.Helpers;
 using System;
 using System.Collections.Generic;
 
@@ -29,6 +30,7 @@ namespace ReleaseLib.MusicBrainz
         /// <summary>
         /// Год выпуска текущего релиза.
         /// </summary>
+        [JsonConverter(typeof(MusicBrainzDateTimeConverter))]
         public DateTime Date { get; set; }
 
         /// <summary>

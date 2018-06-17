@@ -52,6 +52,7 @@
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\MusicBrainz\Event.cs" />
     <Compile Include="Model\MusicBrainz\Helpers\LifeSpan.cs" />
+    <Compile Include="Model\MusicBrainz\Helpers\MusicBrainzDateTimeConverter.cs" />
     <Compile Include="Model\MusicBrainz\Label.cs" />
     <Compile Include="Model\MusicBrainz\Media.cs" />
     <Compile Include="Model\MediumType.cs" />
