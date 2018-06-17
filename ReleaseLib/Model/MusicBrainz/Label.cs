@@ -1,4 +1,6 @@
-﻿namespace ReleaseLib.MusicBrainz
+﻿using Newtonsoft.Json;
+
+namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Музыкальный лейбл.
@@ -8,6 +10,16 @@
         /// <summary>
         /// GUID лейбла в базе данных MusicBrainz.
         /// </summary>
-        public string MusicBrainz_ID { get; set; }
+        public string Id { get; set; }
+
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "sort-name")]
+        public string SortName { get; set; }
+
+        [JsonProperty(PropertyName = "label-code")]
+        public int LabelCode { get; set; }
+
+        public string Disambiguation { get; set; }
     }
 }
