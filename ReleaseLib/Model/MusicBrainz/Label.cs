@@ -18,7 +18,7 @@ namespace ReleaseLib.MusicBrainz
         public string SortName { get; set; }
 
         [JsonProperty(PropertyName = "label-code")]
-        public int LabelCode { get; set; }
+        public int? LabelCode { get; set; }
 
         public string Disambiguation { get; set; }
     }
