@@ -23,7 +23,7 @@ namespace ReleaseLib.MusicBrainz
 
         [JsonProperty(PropertyName = "first-release-date")]
         [JsonConverter(typeof(MusicBrainzDateTimeConverter))]
-        public DateTime FirstReleaseDate { get; set; }
+        public DateTime? FirstReleaseDate { get; set; }
 
         [JsonProperty(PropertyName = "artist-credit")]
         public ArtistCredit ArtistCredit { get; set; }

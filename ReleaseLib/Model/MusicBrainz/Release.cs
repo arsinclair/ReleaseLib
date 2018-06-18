@@ -30,7 +30,7 @@ namespace ReleaseLib.MusicBrainz
         /// Год выпуска текущего релиза.
         /// </summary>
         [JsonConverter(typeof(MusicBrainzDateTimeConverter))]
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// Год выпуска оригинального релиза. Актуален в релизах типа Reissue.
