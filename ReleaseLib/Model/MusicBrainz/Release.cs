@@ -57,6 +57,9 @@ namespace ReleaseLib.MusicBrainz
         [JsonProperty(PropertyName = "release-events")]
         public List<ReleaseEvent> ReleaseEvents { get; set; }
 
+        [JsonProperty(PropertyName = "release-group")]
+        public ReleaseGroup ReleaseGroup { get; set; }
+
         /// <summary>
         /// Список музыкальных стилей, к которым можно отнести данный релиз.
         /// </summary>
