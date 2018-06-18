@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Globalization;
 
-namespace ReleaseLib.Model.MusicBrainz.Helpers
+namespace ReleaseLib.MusicBrainz
 {
     public class MusicBrainzDateTimeConverter : JsonConverter
     {

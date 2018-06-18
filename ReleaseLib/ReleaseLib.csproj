@@ -58,6 +58,7 @@
     <Compile Include="Model\MusicBrainz\Media.cs" />
     <Compile Include="Model\MediumType.cs" />
     <Compile Include="Model\MusicBrainz\Recording.cs" />
+    <Compile Include="Model\MusicBrainz\Helpers\ReleaseEvent.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +73,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

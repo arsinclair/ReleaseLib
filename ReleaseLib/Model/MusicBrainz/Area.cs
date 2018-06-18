@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ReleaseLib.MusicBrainz
 {
@@ -10,5 +11,8 @@ namespace ReleaseLib.MusicBrainz
 
         [JsonProperty(PropertyName = "sort-name")]
         public string SortName { get; set; }
+
+        [JsonProperty(PropertyName = "iso-3166-1-codes")]
+        public List<string> ISOCodes_XX { get; set; }
     }
 }

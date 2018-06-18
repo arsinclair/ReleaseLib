@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ReleaseLib.APIHelpers;
-using ReleaseLib.Model.MusicBrainz.Helpers;
 using System;
 using System.Collections.Generic;
 
@@ -54,6 +53,9 @@ namespace ReleaseLib.MusicBrainz
         /// </summary>
         [JsonProperty(PropertyName = "label-info")]
         public List<LabelInfo> LabelInfo { get; set; }
+
+        [JsonProperty(PropertyName = "release-events")]
+        public List<ReleaseEvent> ReleaseEvents { get; set; }
 
         /// <summary>
         /// Список музыкальных стилей, к которым можно отнести данный релиз.
