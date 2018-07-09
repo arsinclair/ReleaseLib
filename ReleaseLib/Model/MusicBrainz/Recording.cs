@@ -6,10 +6,16 @@ namespace ReleaseLib.MusicBrainz
     public class Recording
     {
         public string Id { get; set; }
+
         public string Title { get; set; }
-        public int Length { get; set; }
+
+        [JsonConverter(typeof(MusicBrainzDurationConverter))]
+        public int? Length { get; set; }
+
         public string Disambiguation { get; set; }
+
         public bool Video { get; set; }
+
         public List<Release> Releases { get; set; }
 
         [JsonProperty(PropertyName = "artist-credit")]

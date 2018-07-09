@@ -1,4 +1,6 @@
-﻿namespace ReleaseLib.MusicBrainz
+﻿using Newtonsoft.Json;
+
+namespace ReleaseLib.MusicBrainz
 {
     /// <summary>
     /// Трек.
@@ -25,7 +27,8 @@
         /// <summary>
         /// Продолжительность звучания трека.
         /// </summary>
-        public int Length { get; set; }
+        [JsonConverter(typeof(MusicBrainzDurationConverter))]
+        public int? Length { get; set; }
 
         public Recording Recording { get; set; }
     }
