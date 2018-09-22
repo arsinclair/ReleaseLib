@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using ReleaseLib.MusicBrainz;
 using System;
 
 namespace ReleaseLib.MusicBrainz
