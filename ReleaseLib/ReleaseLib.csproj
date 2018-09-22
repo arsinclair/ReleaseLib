@@ -60,7 +60,9 @@
     <Compile Include="Model\MediumType.cs" />
     <Compile Include="Model\MusicBrainz\Recording.cs" />
     <Compile Include="Model\MusicBrainz\Helpers\ReleaseEvent.cs" />
+    <Compile Include="Model\MusicBrainz\Relation.cs" />
     <Compile Include="Model\MusicBrainz\ReleaseGroup.cs" />
+    <Compile Include="Model\MusicBrainz\Url.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

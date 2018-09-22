@@ -80,6 +80,11 @@ namespace ReleaseLib.MusicBrainz
         /// </summary>
         public TimeSpan Duration { get; set; }
 
+        /// <summary>
+        /// Связи с иными сущностями (Relationships)
+        /// </summary>
+        public List<Relation> Relations { get; set; }
+
         private Settings _settings;
         #region Methods
         public Release()
