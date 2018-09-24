@@ -61,6 +61,11 @@ namespace ReleaseLib.MusicBrainz
         public ReleaseGroup ReleaseGroup { get; set; }
 
         /// <summary>
+        /// Статус релиза (официальный, бутлег, промо, и т.п.)
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
         /// Список музыкальных стилей, к которым можно отнести данный релиз.
         /// </summary>
         public List<string> Styles { get; set; }
