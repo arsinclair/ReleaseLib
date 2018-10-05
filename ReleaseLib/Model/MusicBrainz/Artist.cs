@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using ReleaseLib.APIHelpers;
 
 namespace ReleaseLib.MusicBrainz
 {
@@ -23,5 +25,38 @@ namespace ReleaseLib.MusicBrainz
         public string SortName { get; set; }
 
         public string Disambiguation { get; set; }
+
+        #region Methods
+        public Artist()
+        {
+        }
+
+        public static Artist Load(string Id)
+        {
+            return _Load(Id, false);
+        }
+        public static Artist Load(string Id, params string[] AdditionalFields)
+        {
+            return _Load(Id, false, AdditionalFields);
+        }
+        public static Artist Load(string Id, bool IncludeAllAdditionalFields)
+        {
+            return _Load(Id, true);
+        }
+        private static Artist _Load(string Id, bool IncludeAllAdditionalFields, params string[] AdditionalFields)
+        {
+            string json = string.Empty;
+            if (IncludeAllAdditionalFields == true)
+            {
+                json = MBAPIHelper.GetArtistById(Id, IncludeAllAdditionalFields).Result;
+            }
+            else
+            {
+                json = MBAPIHelper.GetArtistById(Id, AdditionalFields).Result;
+            }
+            var release = JObject.Parse(json).ToObject<Artist>();
+            return release;
+        }
+        #endregion
     }
 }
