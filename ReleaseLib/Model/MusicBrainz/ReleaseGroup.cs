@@ -25,7 +25,7 @@ namespace ReleaseLib.MusicBrainz
         public DateTime? FirstReleaseDate { get; set; }
 
         [JsonProperty(PropertyName = "artist-credit")]
-        public ArtistCredit ArtistCredit { get; set; }
+        public List<ArtistCredit> ArtistCredit { get; set; }
 
         [JsonProperty(PropertyName = "secondary-types")]
         public List<string> SecondaryTypes { get; set; }
