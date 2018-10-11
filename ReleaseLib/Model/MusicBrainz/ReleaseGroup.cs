@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using ReleaseLib.APIHelpers;
 using System;
 using System.Collections.Generic;
 
@@ -30,5 +32,38 @@ namespace ReleaseLib.MusicBrainz
 
         [JsonProperty(PropertyName = "secondary-type-ids")]
         public List<string> SecondaryTypeIds { get; set; }
+
+        #region Methods
+        public ReleaseGroup()
+        {
+        }
+
+        public static ReleaseGroup Load(string Id)
+        {
+            return _Load(Id, false);
+        }
+        public static ReleaseGroup Load(string Id, params string[] AdditionalFields)
+        {
+            return _Load(Id, false, AdditionalFields);
+        }
+        public static ReleaseGroup Load(string Id, bool IncludeAllAdditionalFields)
+        {
+            return _Load(Id, true);
+        }
+        private static ReleaseGroup _Load(string Id, bool IncludeAllAdditionalFields, params string[] AdditionalFields)
+        {
+            string json = string.Empty;
+            if (IncludeAllAdditionalFields == true)
+            {
+                json = MBAPIHelper.GetReleaseGroupById(Id, IncludeAllAdditionalFields).Result;
+            }
+            else
+            {
+                json = MBAPIHelper.GetReleaseGroupById(Id, AdditionalFields).Result;
+            }
+            var release = JObject.Parse(json).ToObject<ReleaseGroup>();
+            return release;
+        }
+        #endregion
     }
 }

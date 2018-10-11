@@ -18,5 +18,5 @@ using System.Runtime.InteropServices;
 /// 1.x.x is a Major Release
 /// x.1.x is a New Feature release
 /// x.x.1 is a Bug Fix in current release
-[assembly: AssemblyVersion("1.9.0.0")]
-[assembly: AssemblyFileVersion("1.9.0.0")]
+[assembly: AssemblyVersion("1.10.0.0")]
+[assembly: AssemblyFileVersion("1.10.0.0")]
