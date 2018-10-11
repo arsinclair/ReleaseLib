@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ReleaseLib.MusicBrainz
 {
@@ -21,5 +22,7 @@ namespace ReleaseLib.MusicBrainz
         public int? LabelCode { get; set; }
 
         public string Disambiguation { get; set; }
+
+        public List<Tag> Tags { get; set; }
     }
 }

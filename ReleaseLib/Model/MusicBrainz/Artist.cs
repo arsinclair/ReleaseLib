@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ReleaseLib.APIHelpers;
+using System.Collections.Generic;
 
 namespace ReleaseLib.MusicBrainz
 {
@@ -25,6 +26,8 @@ namespace ReleaseLib.MusicBrainz
         public string SortName { get; set; }
 
         public string Disambiguation { get; set; }
+
+        public List<Tag> Tags { get; set; }
 
         #region Methods
         public Artist()

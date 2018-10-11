@@ -21,6 +21,8 @@ namespace ReleaseLib.MusicBrainz
         [JsonProperty(PropertyName = "artist-credit")]
         public List<ArtistCredit> ArtistCredit { get; set; }
 
+        public List<Tag> Tags { get; set; }
+
         public Recording()
         {
 

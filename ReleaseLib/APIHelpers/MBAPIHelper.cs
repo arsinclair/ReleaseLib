@@ -30,7 +30,7 @@ namespace ReleaseLib.APIHelpers
             string[] fieldSet = new string[] { };
             if (IncludeAllAdditionalFields == true)
             {
-                fieldSet = new List<string> { "recordings", "releases", "release-groups", "works" }.ToArray();
+                fieldSet = new List<string> { "recordings", "releases", "release-groups", "works", "tags" }.ToArray();
             }
             return GetById("artist", ArtistId, fieldSet);
         }
@@ -81,7 +81,7 @@ namespace ReleaseLib.APIHelpers
             string[] fieldSet = new string[] { };
             if (IncludeAllAdditionalFields == true)
             {
-                fieldSet = new List<string> { "releases" }.ToArray();
+                fieldSet = new List<string> { "releases", "tags" }.ToArray();
             }
             return GetById("label", LabelId, fieldSet);
         }
@@ -111,7 +111,7 @@ namespace ReleaseLib.APIHelpers
             string[] fieldSet = new string[] { };
             if (IncludeAllAdditionalFields == true)
             {
-                fieldSet = new List<string> { "artists", "releases" }.ToArray();
+                fieldSet = new List<string> { "artists", "releases", "tags" }.ToArray();
             }
             return GetById("recording", RecordingId, fieldSet);
         }
@@ -127,7 +127,7 @@ namespace ReleaseLib.APIHelpers
             if (IncludeAllAdditionalFields == true)
             {
                 var fields = new List<string> { "artists", "collections", "labels", "recordings", "release-groups" };
-                var relationshipsFields = new List<string> { "area-rels", "artist-rels", "event-rels", "instrument-rels", "label-rels", "place-rels", "recording-rels", "release-rels", "release-group-rels", "series-rels", "url-rels", "work-rels" };
+                var relationshipsFields = new List<string> { "area-rels", "artist-rels", "event-rels", "instrument-rels", "label-rels", "place-rels", "recording-rels", "release-rels", "release-group-rels", "series-rels", "url-rels", "work-rels", "tags" };
                 fields.AddRange(relationshipsFields);
                 fieldSet = fields.ToArray();
             }
@@ -149,7 +149,7 @@ namespace ReleaseLib.APIHelpers
             string[] fieldSet = new string[] { };
             if (IncludeAllAdditionalFields == true)
             {
-                fieldSet = new List<string> { "artists", "releases" }.ToArray();
+                fieldSet = new List<string> { "artists", "releases", "tags" }.ToArray();
             }
             return GetById("release-group", ReleaseGroupId, fieldSet);
         }

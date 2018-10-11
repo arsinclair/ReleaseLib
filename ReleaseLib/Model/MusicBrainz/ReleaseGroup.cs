@@ -33,6 +33,8 @@ namespace ReleaseLib.MusicBrainz
         [JsonProperty(PropertyName = "secondary-type-ids")]
         public List<string> SecondaryTypeIds { get; set; }
 
+        public List<Tag> Tags { get; set; }
+
         #region Methods
         public ReleaseGroup()
         {

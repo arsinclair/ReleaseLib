@@ -90,6 +90,8 @@ namespace ReleaseLib.MusicBrainz
         /// </summary>
         public List<Relation> Relations { get; set; }
 
+        public List<Tag> Tags { get; set; }
+
         private Settings _settings;
         #region Methods
         public Release()
