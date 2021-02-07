@@ -1,94 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C16D1944-3DBC-465A-8679-ED0A986D68C9}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReleaseLib</RootNamespace>
-    <AssemblyName>ReleaseLib</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\ReleaseLib.xml</DocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="APIHelpers\DiscogsAPIHelper.cs" />
-    <Compile Include="APIHelpers\MBAPIHelper.cs" />
-    <Compile Include="Model\MusicBrainz\Area.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\ArtistCredit.cs" />
-    <Compile Include="Model\MusicBrainz\Artist.cs" />
-    <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\MusicBrainz\Event.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\LifeSpan.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\MusicBrainzDurationConverter.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\MusicBrainzDateTimeConverter.cs" />
-    <Compile Include="Model\MusicBrainz\Label.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\LabelInfo.cs" />
-    <Compile Include="Model\MusicBrainz\Media.cs" />
-    <Compile Include="Model\MediumType.cs" />
-    <Compile Include="Model\MusicBrainz\Recording.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\ReleaseEvent.cs" />
-    <Compile Include="Model\MusicBrainz\Relation.cs" />
-    <Compile Include="Model\MusicBrainz\ReleaseGroup.cs" />
-    <Compile Include="Model\MusicBrainz\Tag.cs" />
-    <Compile Include="Model\MusicBrainz\Url.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\MusicBrainz\Release.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Model\MusicBrainz\Helpers\Track.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Countries.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="ReleaseLib.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<VersionPrefix>1.2.0</VersionPrefix>
+		<Description>A library designed for retrieving information about any musical release available in MusicBrainz open database.</Description>
+		<Authors>Roman Sinclair</Authors>
+		<PackageTags>musicbrainz;release;api;releaselib;library;album</PackageTags>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{C16D1944-3DBC-465A-8679-ED0A986D68C9}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RootNamespace>ReleaseLib</RootNamespace>
+		<AssemblyName>ReleaseLib</AssemblyName>
+		<TargetFramework>net5.0</TargetFramework>
+
+		<GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Deterministic>true</Deterministic>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<IsPackable>true</IsPackable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+	</ItemGroup>
 </Project>
