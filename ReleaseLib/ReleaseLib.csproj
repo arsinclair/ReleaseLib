@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<VersionPrefix>1.2.0</VersionPrefix>
+		<VersionPrefix>1.12.0</VersionPrefix>
+		<Title>ReleaseLib</Title>
 		<Description>A library designed for retrieving information about any musical release available in MusicBrainz open database.</Description>
 		<Authors>Roman Sinclair</Authors>
 		<PackageTags>musicbrainz;release;api;releaselib;library;album</PackageTags>
@@ -14,23 +15,32 @@
 		<RootNamespace>ReleaseLib</RootNamespace>
 		<AssemblyName>ReleaseLib</AssemblyName>
 		<TargetFramework>net5.0</TargetFramework>
+		<Copyright>Copyright © Roman Sinclair 2021</Copyright>
+
+		<RepositoryUrl>https://gitlab.com/arsinclair/ReleaseLib</RepositoryUrl> 
+    	<RepositoryType>git</RepositoryType> 
 
 		<GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<Deterministic>true</Deterministic>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<IsPackable>true</IsPackable>
-	</PropertyGroup>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 
-	<PropertyGroup>
+		<LangVersion>9.0</LangVersion>
+
 		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitLab" Version="1.1.0-beta-20204-02" PrivateAssets="All"/>
 	</ItemGroup>
 </Project>
