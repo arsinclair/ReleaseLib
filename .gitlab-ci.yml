@@ -10,6 +10,6 @@ mirror:
         - printf "%s\n" "${GITHUB_DEPLOY_KEY}" > ~/.ssh/id_rsa
         - chmod 600 ~/.ssh/id_rsa
         - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-        - git clone ${CI_REPOSITORY_URL} --mirror
-        - cd ${CI_PROJECT_NAME}
-        - git push git@github.com:${GITHUB_REPO}.git --mirror
+        - git clone --bare ${CI_REPOSITORY_URL}
+        - cd ${CI_PROJECT_NAME}.git
+        - git push --mirror git@github.com:${GITHUB_REPO}.git
